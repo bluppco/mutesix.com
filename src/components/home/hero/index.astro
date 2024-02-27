@@ -1,0 +1,25 @@
+---
+
+// IMPORTS ASTRO ATOMS
+import Video from "@/atoms/video/index.astro"
+
+// GET ASTRO PROPS
+const {
+
+    CDN,
+    PROJECT
+
+} = Astro.props
+
+const data = {
+
+    source: "/delete-later/hero-video-mutesix.mp4"
+
+}
+
+---
+<section>
+    <Video>
+        <source src={ data.source } type="video/mp4" />
+    </Video>
+</section>

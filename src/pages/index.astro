@@ -12,13 +12,8 @@ const {
 
 } = runtime.env
 
-// IMPORT LAYOUT COMPONENTS
+// IMPORTS LAYOUTS
 import Layout from "@/layouts/layout/index.astro"
-
-// IMPORT COMMON COMPONENTS
-import Footer from "@/components/common/footer/index.astro"
-import Header from "@/components/common/header/index.astro"
-import HeaderBanner from "@/components/common/header-banner/index.astro"
 
 // HOME COMPONENTS
 import Home from "@/components/home/index.astro"
@@ -29,8 +24,10 @@ import Home from "@/components/home/index.astro"
 	image=""
 	title=""
 >
-	<HeaderBanner ENVIRONMENT={ ENVIRONMENT } />
-	<Header />
-	<Home />
-	<Footer />
+	<Home
+		CDN={ CDN }
+		ENDPOINT={ ENDPOINT }
+		ENVIRONMENT={ ENVIRONMENT }
+		PROJECT={ PROJECT }
+	/>
 </Layout>
