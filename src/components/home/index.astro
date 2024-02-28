@@ -1,6 +1,7 @@
 ---
 
 // IMPORTS ASTRO COMPONENTS
+import About from "@/components/home/about/index.astro"
 import Footer from "@/components/common/footer/index.astro"
 import Header from "@/components/common/header/index.astro"
 import HeaderBanner from "@/components/common/header-banner/index.astro"
@@ -20,4 +21,8 @@ const {
 <HeaderBanner ENVIRONMENT={ ENVIRONMENT } />
 <Header />
 <Hero />
+<About
+    CDN={ CDN }
+    PROJECT={ PROJECT }
+/>
 <Footer />

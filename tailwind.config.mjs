@@ -47,10 +47,12 @@ module.exports = {
 			},
 			colors: {
 
+				"ms_dark_blue": "#12284b"
 
 			},
 			fontFamily: {
 
+				"proxima_nova": [ "proxima-nova", "sans-serif" ]
 
 			}
 
