@@ -6,12 +6,12 @@ import Footer from "@/components/common/footer/index.astro"
 import Header from "@/components/common/header/index.astro"
 import HeaderBanner from "@/components/common/header-banner/index.astro"
 import Hero from "@/components/home/hero/index.astro"
+import Insights from "@/components/home/insights/index.astro"
 
 // GET ASTRO PROPS
 const {
 
     CDN,
-    ENDPOINT,
     ENVIRONMENT,
     PROJECT
 
@@ -25,4 +25,5 @@ const {
     CDN={ CDN }
     PROJECT={ PROJECT }
 />
+<Insights />
 <Footer />
