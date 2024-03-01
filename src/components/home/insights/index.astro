@@ -1,0 +1,35 @@
+---
+
+// IMPORTS ASTRO LAYOUTS
+import Container from "@/layouts/container/index.astro"
+
+// IMPORTS ASTRO ATOMS
+import HeadingTwoBlue from "@/atoms/headings/two/blue/index.astro"
+
+const data = {
+
+    title: "We Make It Happen",
+    revenue_title: "In Direct Revenue",
+    revenue_amount: "$1.2B+",
+    impressions_title: "Impressions Served",
+    impressions_served: "27.1B+"
+
+}
+---
+<section class="pb-20">
+    <Container>
+        <section class="grid md:grid-cols-2 gap-14 md:gap-32">
+            <HeadingTwoBlue>{ data.title }</HeadingTwoBlue>
+            <section class="space-y-8">
+                <div>
+                    <span class="font-proxima_nova font-extrabold text-ms_dark_blue text-6xl md:text-8xl">{ data.revenue_amount }</span>
+                    <p class="font-proxima_nova font-medium text-ms_dark_blue text-2xl md:text-3xl">{ data.revenue_title }</p>
+                </div>
+                <div>
+                    <span class="font-proxima_nova font-extrabold text-ms_dark_blue text-6xl md:text-8xl">{ data.revenue_amount }</span>
+                    <p class="font-proxima_nova font-medium text-ms_dark_blue text-2xl md:text-3xl">{ data.revenue_title }</p>
+                </div>
+            </section>
+        </section>
+    </Container>
+</section>

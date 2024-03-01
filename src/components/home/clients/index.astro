@@ -1,0 +1,36 @@
+---
+
+// IMPORTS ASTRO LAYOUTS
+import Container from "@/layouts/container/index.astro"
+
+// IMPORTS ASTRO ATOMS
+import Link from "@/atoms/link/index.astro"
+import PictureInternalContain from "@/atoms/picture/internal/contain/index.astro"
+import PrimaryButton from "@/atoms/button/primary/index.astro"
+
+const data = {
+
+    title: "The Company We Keep",
+    cover: "/delete-later/clients.avif",
+    button_text: "View Roster",
+    button_link: "/oursuccess"
+
+}
+
+---
+<Container>
+    <section class="space-y-10 md:pt-20 pb-20">
+        <h2 class="font-proxima_nova font-medium text-ms_dark_blue text-4xl md:text-5xl text-center tracking-wider">{ data.title }</h2>
+        <div class="w-full aspect-[3/1]">
+            <PictureInternalContain
+                alternative_text={ data.title }
+                source={ data.cover }
+            />
+        </div>
+        <div class="flex justify-center">
+            <Link href={ data.button_link } aria_label={ data.button_text }>
+                <PrimaryButton>{ data.button_text }</PrimaryButton>
+            </Link>
+        </div>
+    </section>
+</Container>
