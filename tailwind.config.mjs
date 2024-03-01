@@ -50,7 +50,8 @@ module.exports = {
 				"ms_dark_blue": "#12284b",
 				"ms_lavender": "#6863f4",
 				"ms_royal_blue": "#422be2",
-				"ms_black": "#00103e"
+				"ms_black": "#00103e",
+				"ms_light_blue": "#c7d8ef"
 
 			},
 			fontFamily: {
