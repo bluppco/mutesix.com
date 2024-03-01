@@ -1,9 +1,14 @@
 ---
 
-// GET PROPS
-const { href } = Astro.props
+// GET ASTRO PROPS
+const {
+
+    aria_label,
+    href
+
+} = Astro.props
 
 ---
-<a class="" href="#">
+<a class="block" href={ href } aria-label={ aria_label }>
     <slot/>
 </a>
