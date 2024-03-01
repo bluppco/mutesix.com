@@ -1,0 +1,56 @@
+---
+
+// IMPORTS ASTRO ATOMS
+import Link from "@/atoms/link/index.astro"
+import PicturInternalContain from "@/atoms/picture/internal/contain/index.astro"
+import PrimaryButton from "@/atoms/button/primary/index.astro"
+
+const data = Array(5).fill({
+
+    category: "Meta",
+    cover: "/delete-later/cover.jpg",
+    logo: "/delete-later/twillory.avif"
+
+})
+
+const work = {
+
+    button_text: "See Work",
+    button_link: "/case-studies"
+
+}
+
+---
+<section>
+    <section class="grid grid-cols-5 px-4 md:px-0">
+        {
+
+            data.map( ( value ) => {
+
+                return(
+                    <div class="group cursor-pointer space-y-4">
+                        <div class="relative h-[580px] w-full bg-contain bg-no-repeat" style=`background-image: url(${ value.cover })`>
+                            <div class="translate-x-60 group-hover:translate-x-24 transition-all duration-300 -rotate-90">
+                                <span class="text-white text-6xl font-proxima_nova font-bold">{ value.category }</span>
+                            </div>
+                            <div class="group-hover:opacity-0 transition-all duration-300 bg-ms_lavender/60 mix-blend-multiply h-full w-full absolute top-0" />
+                        </div>
+                        <div class="h-12 w-full">
+                            <PicturInternalContain
+                                alternative_text=""
+                                source={ value.logo }
+                            />
+                        </div>
+                    </div>
+                )
+
+            })
+
+        }
+    </section>
+    <div class="flex justify-center pt-10">
+        <Link href={ work.button_link } aria_label={ work.button_text }>
+            <PrimaryButton>{ work.button_text }</PrimaryButton>
+        </Link>
+    </div>
+</section>
