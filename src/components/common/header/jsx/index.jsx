@@ -14,7 +14,7 @@ header_data = header_data.sort((a, b) => a.data.order - b.data.order)
 const Header = ( props ) => {
 
     return(
-        <header className="py-8 hidden md:flex items-center fixed top-10 z-[100] w-full bg-white border-b border-zinc-200">
+        <header className="py-4 hidden md:flex items-center fixed top-10 z-[100] w-full bg-white border-b border-zinc-200">
             <Container>
                 <nav className="flex items-center justify-between">
                     <div className="w-48 object-cover">
