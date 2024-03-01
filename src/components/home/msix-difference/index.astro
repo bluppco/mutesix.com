@@ -1,0 +1,45 @@
+---
+
+// IMPORTS ASTRO LAYOUTS
+import Container from "@/layouts/container/index.astro"
+
+// IMPORTS ASTRO ATOMS
+import HeadingTwoBlue from "@/atoms/headings/two/blue/index.astro"
+import PictureInternal from "@/atoms/picture/internal/index.astro"
+
+const data = {
+
+    title: "The M6 Difference",
+    sub_title: "We Answer Real-Time Demands with Agility",
+    description: "Creative and media together at velocity, reacting to the real-time demands of customers and the marketplace.",
+    cover: "/delete-later/difference-cover.avif",
+    images: "/delete-later/difference.avif"
+
+}
+
+---
+<Container>
+    <section class="space-y-12 pb-36">
+        <section class="grid grid-cols-2 gap-2">
+            <section class="flex flex-col justify-center">
+                <HeadingTwoBlue>{ data.title }</HeadingTwoBlue>
+                <p class="text-6xl font-proxima_nova font-medium text-ms_dark_blue leading-tight">{ data.sub_title }</p>
+            </section>
+            <div class="w-full h-full rounded-3xl overflow-hidden">
+                <PictureInternal
+                    alternative_text={ data.title }
+                    source={ data.cover }
+                />
+            </div>
+        </section>
+        <div class="px-20">
+            <p class="text-3xl text-center font-proxima_nova font-medium text-ms_dark_blue leading-normal">{ data.description }</p>
+        </div>
+        <div class="w-full h-full">
+            <PictureInternal
+                alternative_text={ data.title }
+                source={ data.images }
+            />
+        </div>
+    </section>
+</Container>
