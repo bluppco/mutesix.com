@@ -1,0 +1,40 @@
+---
+
+// IMPORTS ASTRO LAYOUTS
+import Container from "@/layouts/container/index.astro"
+
+// IMPORTS ASTRO ATOMS
+import HeadingOneBlue from "@/atoms/headings/one/blue/center/index.astro"
+import PictureInternalContain from "@/atoms/picture/internal/contain/index.astro"
+import Paragraph3xl from "@/atoms/paragraph/3xl/index.astro"
+
+const data = {
+
+    title: "Get to What’s Next",
+    sub_title: "Real-Time Performance Marketing",
+    description: "We accelerate growth through innovative omnichannel solutions. Throw out the rulebook and let our experts drive the future of your brand.",
+    cover: "/delete-later/about.avif"
+
+}
+---
+<section class="py-24">
+    <Container>
+        <section class="md:space-y-16">
+            <section class="space-y-8 md:space-y-2">
+                <HeadingOneBlue>{ data.title }</HeadingOneBlue>
+                <p class="text-5xl md:text-6xl text-center font-proxima_nova font-bold leading-snug md:leading-none">{ data.sub_title }</p>
+            </section>
+            <section class="grid md:grid-cols-2 gap-10">
+                <div class="h-96 md:h-[680px] w-full">
+                    <PictureInternalContain
+                        alternative_text="about"
+                        source={ data.cover }
+                    />
+                </div>
+                <div class="flex items-center">
+                    <Paragraph3xl>{ data.description }</Paragraph3xl>
+                </div>
+            </section>
+        </section>
+    </Container>
+</section>
