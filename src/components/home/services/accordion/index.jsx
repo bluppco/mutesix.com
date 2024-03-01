@@ -30,7 +30,7 @@ const Accordion = ( props ) => {
                 un9n-event={ "service-" + index }
             >
                 <div className="flex-wrap">
-                    <p className="text-3xl font-black text-[#071641]">{ value.title }</p>
+                    <p className="text-2xl md:text-3xl font-black text-[#071641]">{ value.title }</p>
                 </div>
                 <div className="w-6 aspect-square">
                     <motion.img
@@ -55,8 +55,8 @@ const Accordion = ( props ) => {
                         }}
                         transition={{ duration: 0.2 }}
                     >
-                        <div className="w-[50%] pt-6 space-y-6">
-                            <p className="font-proxima_nova text-2xl text-ms_dark_blue leading-normal">{ value.description }</p>
+                        <div className="md:w-[50%] pt-6 space-y-6">
+                            <p className="font-proxima_nova text-lg md:text-2xl text-ms_dark_blue leading-normal">{ value.description }</p>
                             <Link href={ value.button_link } aria_label={ value.button_text }>
                                 <PrimaryButton>{ value.button_text }</PrimaryButton>
                             </Link>
