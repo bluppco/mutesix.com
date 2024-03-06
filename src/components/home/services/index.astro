@@ -6,14 +6,8 @@ import Container from "@/layouts/container/index.astro"
 // IMPORTS JSX COMPONENTS
 import ServiceAccordion from "@/components/home/services/accordion/index.jsx"
 
-const data = Array(3).fill({
-
-    title: "Custom Omnichannel Strategy",
-    description: "Customer journey mapping, advanced analytics, and optimized testing to meet customer needs.",
-    button_text: "See All Services",
-    button_link: "/services"
-
-})
+// GET ASTRO PROPS
+const { data } = Astro.props
 
 ---
 <section class="bg-ms_royal_blue py-10 md:py-24">

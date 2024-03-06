@@ -7,19 +7,14 @@ import Video from "@/atoms/video/index.astro"
 const {
 
     CDN,
+    data,
     PROJECT
 
 } = Astro.props
 
-const data = {
-
-    source: "/delete-later/hero-video-mutesix.mp4"
-
-}
-
 ---
-<section class="mt-28">
+<section class="mt-28 bg-zinc-200">
     <Video>
-        <source src={ data.source } type="video/mp4" />
+        <source src={ CDN + PROJECT + "/" + data.videos[0].file } type="video/mp4" />
     </Video>
 </section>

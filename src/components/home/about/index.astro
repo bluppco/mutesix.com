@@ -5,17 +5,18 @@ import Container from "@/layouts/container/index.astro"
 
 // IMPORTS ASTRO ATOMS
 import HeadingOneBlue from "@/atoms/headings/one/blue/center/index.astro"
-import PictureInternalContain from "@/atoms/picture/internal/contain/index.astro"
+import PictureContain from "@/atoms/picture/contain/index.astro"
 import Paragraph3xl from "@/atoms/paragraph/3xl/index.astro"
 
-const data = {
+// GET ASTRO PROPS
+const {
 
-    title: "Get to What’s Next",
-    sub_title: "Real-Time Performance Marketing",
-    description: "We accelerate growth through innovative omnichannel solutions. Throw out the rulebook and let our experts drive the future of your brand.",
-    cover: "/delete-later/about.avif"
+    CDN,
+    data,
+    PROJECT
 
-}
+} = Astro.props
+
 ---
 <section class="py-24">
     <Container>
@@ -26,8 +27,11 @@ const data = {
             </section>
             <section class="grid md:grid-cols-2 gap-10">
                 <div class="h-96 md:h-[680px] w-full">
-                    <PictureInternalContain
+                    <PictureContain
                         alternative_text="about"
+                        CDN={ CDN }
+                        image_width="1000"
+                        PROJECT={ PROJECT }
                         source={ data.cover }
                     />
                 </div>

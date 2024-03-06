@@ -17,21 +17,48 @@ const {
 
     CDN,
     ENVIRONMENT,
-    PROJECT
+    home_data,
+    PROJECT,
+	services,
+	work
 
 } = Astro.props
 
 ---
-<HeaderBanner ENVIRONMENT={ ENVIRONMENT } />
+<HeaderBanner
+    ENVIRONMENT={ ENVIRONMENT }
+/>
 <Header />
-<Hero />
-<About
+<Hero
     CDN={ CDN }
+    data={ home_data.hero }
     PROJECT={ PROJECT }
 />
-<Insights />
-<Work />
-<Clients />
-<TheM6Difference />
-<Services />
+<About
+    CDN={ CDN }
+    data={ home_data.about }
+    PROJECT={ PROJECT }
+/>
+<Insights
+    data={ home_data.insights }
+/>
+<Work
+    CDN={ CDN }
+    data={ home_data.work }
+    PROJECT={ PROJECT }
+    work={ work }
+/>
+<Clients
+    CDN={ CDN }
+    data={ home_data.clients }
+    PROJECT={ PROJECT }
+/>
+<TheM6Difference
+    CDN={ CDN }
+    data={ home_data.difference }
+    PROJECT={ PROJECT }
+/>
+<Services
+    data={ services }
+/>
 <Footer />

@@ -5,17 +5,16 @@ import Container from "@/layouts/container/index.astro"
 
 // IMPORTS ASTRO ATOMS
 import HeadingTwoBlue from "@/atoms/headings/two/blue/index.astro"
-import PictureInternal from "@/atoms/picture/internal/index.astro"
+import Picture from "@/atoms/picture/index.astro"
 
-const data = {
+// GET ASTRO PROPS
+const {
 
-    title: "The M6 Difference",
-    sub_title: "We Answer Real-Time Demands with Agility",
-    description: "Creative and media together at velocity, reacting to the real-time demands of customers and the marketplace.",
-    cover: "/delete-later/difference-cover.avif",
-    images: "/delete-later/difference.avif"
+    CDN,
+    data,
+    PROJECT
 
-}
+} = Astro.props
 
 ---
 <Container>
@@ -26,9 +25,12 @@ const data = {
                 <p class="text-3xl md:text-6xl font-proxima_nova font-medium text-ms_dark_blue leading-tight">{ data.sub_title }</p>
             </section>
             <div class="w-full h-full rounded-3xl overflow-hidden">
-                <PictureInternal
+                <Picture
                     alternative_text={ data.title }
+                    CDN={ CDN }
+                    PROJECT={ PROJECT }
                     source={ data.cover }
+                    image_width="900"
                 />
             </div>
         </section>
@@ -36,9 +38,12 @@ const data = {
             <p class="text-2xl md:text-3xl md:text-center font-proxima_nova font-medium text-ms_dark_blue leading-normal">{ data.description }</p>
         </div>
         <div class="w-full h-full">
-            <PictureInternal
+            <Picture
                 alternative_text={ data.title }
-                source={ data.images }
+                CDN={ CDN }
+                PROJECT={ PROJECT }
+                source={ data.images[0].file }
+                image_width="2000"
             />
         </div>
     </section>
