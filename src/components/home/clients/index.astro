@@ -5,25 +5,28 @@ import Container from "@/layouts/container/index.astro"
 
 // IMPORTS ASTRO ATOMS
 import Link from "@/atoms/link/index.astro"
-import PictureInternalContain from "@/atoms/picture/internal/contain/index.astro"
+import PictureContain from "@/atoms/picture/contain/index.astro"
 import PrimaryButton from "@/atoms/button/primary/index.astro"
 
-const data = {
+// GET ASTRO PROPS
+const {
 
-    title: "The Company We Keep",
-    cover: "/delete-later/clients.avif",
-    button_text: "View Roster",
-    button_link: "/oursuccess"
+    CDN,
+    data,
+    PROJECT
 
-}
+} = Astro.props
 
 ---
 <Container>
-    <section class="space-y-10 md:pt-20 pb-20">
+    <section class="space-y-10 md:pt-20 pb-10 md:pb-20">
         <h2 class="font-proxima_nova font-medium text-ms_dark_blue text-4xl md:text-5xl text-center tracking-wider">{ data.title }</h2>
         <div class="w-full aspect-[3/1]">
-            <PictureInternalContain
+            <PictureContain
                 alternative_text={ data.title }
+                CDN={ CDN }
+                image_width="1600"
+                PROJECT={ PROJECT }
                 source={ data.cover }
             />
         </div>
