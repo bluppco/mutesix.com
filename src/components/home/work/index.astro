@@ -2,43 +2,40 @@
 
 // IMPORTS ASTRO ATOMS
 import Link from "@/atoms/link/index.astro"
-import PicturInternalContain from "@/atoms/picture/internal/contain/index.astro"
+import PictureContain from "@/atoms/picture/contain/index.astro"
 import PrimaryButton from "@/atoms/button/primary/index.astro"
 
-const data = Array(5).fill({
+// GET ASTRO PROPS
+const {
 
-    category: "Meta",
-    cover: "/delete-later/cover.jpg",
-    logo: "/delete-later/twillory.avif"
+    CDN,
+    data,
+    PROJECT,
+    work
 
-})
-
-const work = {
-
-    button_text: "See Work",
-    button_link: "/case-studies"
-
-}
+} = Astro.props
 
 ---
-<section class="pb-14">
+<section class="pb-10 md:pb-14 overflow-hidden">
     <section class="grid md:grid-cols-5 gap-4 md:gap-0">
         {
 
-            data.map( ( value ) => {
+            work.map( ( value ) => {
 
                 return(
                     <div class="group cursor-pointer space-y-4">
-                        <div class="relative h-40 md:h-[580px] w-full bg-contain bg-no-repeat" style=`background-image: url(${ value.cover })`>
-                            <div class="translate-x-60 group-hover:translate-x-24 transition-all duration-300 -rotate-90">
-                                <span class="text-white text-6xl font-proxima_nova font-bold">{ value.category }</span>
+                        <div class="relative h-40 md:h-[580px] w-full bg-cover bg-top md:bg-center bg-no-repeat overflow-hidden" style=`background-image: url(${ CDN + PROJECT + "/" + value.cover })`>
+                            <div class="translate-x-60 md:group-hover:translate-x-20 mac:group-hover:translate-x-24 transition-all duration-300 -rotate-90 mt-80">
+                                <p class="text-white text-6xl font-proxima_nova font-bold w-[440px] text-right h-full">{ value.category }</p>
                             </div>
                             <div class="group-hover:opacity-0 transition-all duration-300 bg-ms_lavender/60 mix-blend-multiply h-full w-full absolute top-0" />
                         </div>
                         <div class="h-12 w-full">
-                            <PicturInternalContain
-                                alternative_text=""
-                                source={ value.logo }
+                            <PictureContain
+                                alternative_text={ value.title }
+                                source={ value.logo[0].file }
+                                CDN={ CDN }
+                                PROJECT={ PROJECT }
                             />
                         </div>
                     </div>
@@ -49,8 +46,8 @@ const work = {
         }
     </section>
     <div class="flex justify-center pt-10">
-        <Link href={ work.button_link } aria_label={ work.button_text }>
-            <PrimaryButton>{ work.button_text }</PrimaryButton>
+        <Link href={ data.button_link } aria_label={ data.button_text }>
+            <PrimaryButton>{ data.button_text }</PrimaryButton>
         </Link>
     </div>
 </section>

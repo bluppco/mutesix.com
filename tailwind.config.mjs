@@ -58,6 +58,11 @@ module.exports = {
 
 				"proxima_nova": [ "proxima-nova", "sans-serif" ]
 
+			},
+			screens: {
+
+				"mac": "1440px"
+
 			}
 
 		}
