@@ -13,7 +13,7 @@ const Accordion = ( props ) => {
     const {
 
         expand,
-        index ,
+        index,
         updateExpand,
         value
 
@@ -56,7 +56,7 @@ const Accordion = ( props ) => {
                         transition={{ duration: 0.2 }}
                     >
                         <div className="md:w-[50%] pt-6 space-y-6">
-                            <p className="font-proxima_nova text-lg md:text-2xl text-ms_dark_blue leading-normal">{ value.description }</p>
+                            <p className="font-proxima_nova text-lg md:text-2xl text-ms_dark_blue md:leading-normal">{ value.description }</p>
                             <Link href={ value.button_link } aria_label={ value.button_text }>
                                 <PrimaryButton>{ value.button_text }</PrimaryButton>
                             </Link>
@@ -81,7 +81,7 @@ const Service = ( props ) => {
                 data.map( ( value, index ) => {
 
                     return (
-                        <Accordion expand={ expand } updateExpand={ updateExpand } value={ value } index={ index } key={ "service" + index }/>
+                        <Accordion expand={ expand } updateExpand={ updateExpand } value={ value } index={ index } key={ "service" + index } />
                     )
 
                 })

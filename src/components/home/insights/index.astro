@@ -15,9 +15,9 @@ const { data } = Astro.props
 ---
 <section class="pb-20">
     <Container>
-        <section class="grid md:grid-cols-2 gap-14 md:gap-32">
+        <section class="grid md:grid-cols-2 gap-14 md:gap-12">
             <HeadingTwoBlue>{ data.title }</HeadingTwoBlue>
-            <section class="space-y-8">
+            <section class="space-y-8 md:px-20">
                 <Statistics
                     number={ data.revenue_amount }
                     title={ data.revenue_title }
