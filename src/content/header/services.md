@@ -3,7 +3,8 @@ title: Services
 slug: services
 order: 1
 has_dropdown: true
-items: [
+title_one: Marketing Services
+marketing_services: [
     {
         title: Paid Social,
         slug: facebook-ad-agency,
@@ -35,11 +36,12 @@ items: [
         order: 6
     }
 ]
-# creative_services: [
-#     {
-#         title: Performance Studio,
-#         slug: bespoke-production,
-#         order: 1
-#     }
-# ]
+title_two: Creative Services
+creative_services: [
+    {
+        title: Performance Studio,
+        slug: bespoke-production,
+        order: 1
+    }
+]
 ---
