@@ -16,7 +16,7 @@ let footer = await getCollection('footer')
 footer = footer.sort((a, b) => a.data.order - b.data.order).filter( ( item ) => item.data.live )
 
 ---
-<footer class="bg-[#071641] py-20">
+<footer class="bg-[#071641] py-10 md:py-20">
     <Container>
        <section class="md:flex justify-between">
             <section class="space-y-16">
