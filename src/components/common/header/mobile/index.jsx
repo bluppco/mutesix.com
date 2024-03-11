@@ -16,7 +16,7 @@ const HeaderMobile = ( props ) => {
     const [ isOpen, updateOpen ] = useState( false )
 
     return (
-        <header className="md:hidden top-12 fixed z-50 w-full bg-white p-4 border-b border-b-gray-100">
+        <header className="md:hidden top-14 fixed z-50 w-full bg-white p-4 border-b border-b-gray-100">
             <nav>
                 <div className="flex justify-between items-center z-30 relative">
                     <Link href="/" aria_label="mutesix logo">
