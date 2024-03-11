@@ -16,7 +16,7 @@ const HeaderMobile = ( props ) => {
     const [ isOpen, updateOpen ] = useState( false )
 
     return (
-        <header className="md:hidden top-12 fixed z-50 w-full bg-white p-4 border-b border-b-gray-100">
+        <header className="md:hidden top-14 fixed z-50 w-full bg-white p-4 border-b border-b-gray-100">
             <nav>
                 <div className="flex justify-between items-center z-30 relative">
                     <Link href="/" aria_label="mutesix logo">
@@ -70,10 +70,10 @@ const HeaderMobile = ( props ) => {
                             <ul className="flex flex-col gap-8 items-center justify-center h-full z-10">
                                 {
 
-                                    header_data.map( ( value ) => {
+                                    header_data.map( ( value, value ) => {
 
                                         return(
-                                            <li className="font-proxima_nova">
+                                            <li className="font-proxima_nova" key={ value }>
                                                 <Link href={ value.data.slug } aria_label={ value.data.title }>{ value.data.title }</Link>
                                             </li>
                                         )
