@@ -70,10 +70,10 @@ const HeaderMobile = ( props ) => {
                             <ul className="flex flex-col gap-8 items-center justify-center h-full z-10">
                                 {
 
-                                    header_data.map( ( value, value ) => {
+                                    header_data.map( ( value, index ) => {
 
                                         return(
-                                            <li className="font-proxima_nova" key={ value }>
+                                            <li className="font-proxima_nova" key={ index }>
                                                 <Link href={ value.data.slug } aria_label={ value.data.title }>{ value.data.title }</Link>
                                             </li>
                                         )
