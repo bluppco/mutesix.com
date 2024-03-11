@@ -10,6 +10,7 @@ import { motion, AnimatePresence } from "framer-motion"
 
 const Accordion = ( props ) => {
 
+    // GET PROPS
     const {
 
         expand,
@@ -71,9 +72,11 @@ const Accordion = ( props ) => {
 }
 const Service = ( props ) => {
 
+    // GET PROPS
     const { data } = props
 
-    const [ expand, updateExpand ] = useState( 0 )
+    const [ expand, updateExpand ] = useState("")
+
     return (
         <section>
             {
@@ -81,7 +84,13 @@ const Service = ( props ) => {
                 data.map( ( value, index ) => {
 
                     return (
-                        <Accordion expand={ expand } updateExpand={ updateExpand } value={ value } index={ index } key={ "service" + index } />
+                        <Accordion
+                            expand={ expand }
+                            index={ index }
+                            key={ "service" + index }
+                            updateExpand={ updateExpand }
+                            value={ value }
+                        />
                     )
 
                 })
