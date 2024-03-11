@@ -53,31 +53,95 @@ const Header = ( props ) => {
                                                                 source="/icons/dropdown.svg"
                                                             />
                                                         </div>
-                                                        <div className="hidden group-hover:block group-hover:flex-col absolute p-10 rounded bg-white left-0 z-20 top-12 w-48 gap-2">
-                                                            <div className="flex flex-col">
-                                                            {
+                                                        {
 
-                                                                item.data.items.map( ( sub_item, sub_item_index ) => {
+                                                            item.data.title === "Services" &&
+                                                            <div className="hidden group-hover:flex gap-10 absolute p-10 rounded bg-white -left-10 z-20 top-12 w-[540px]">
+                                                                <div>
+                                                                    <div className="font-proxima_nova font-bold text-xl text-ms_dark_blue mb-2 capitalize">{ item.data.title_one }</div>
+                                                                    <div className="flex flex-col">
+                                                                        {
 
-                                                                    return(
-                                                                        <div className="group">
-                                                                            <div className="py-2">
-                                                                                <Link
-                                                                                    aria-label={ "explore" + sub_item.title }
-                                                                                    href={ "/" + item.data.slug + "/" + sub_item.slug }
-                                                                                >
-                                                                                    <div className="font-proxima_nova text-ms_dark_blue capitalize">{ sub_item.title }</div>
-                                                                                </Link>
-                                                                            </div>
-                                                                            <div class="w-0 bg-ms_dark_blue group-hover:w-full h-[1px] transition-all duration-300 ease-in"></div>
+                                                                            item.data.marketing_services.map( ( sub_item, sub_item_index ) => {
+
+                                                                                return(
+                                                                                    <div className="group w-fit" key={ sub_item_index }>
+                                                                                        <div className="py-2">
+                                                                                            <Link
+                                                                                                aria-label={ "explore" + sub_item.title }
+                                                                                                href={ "/" + item.data.slug + "/" + sub_item.slug }
+                                                                                            >
+                                                                                                <span className="font-proxima_nova font-light text-ms_dark_blue text-lg capitalize">{ sub_item.title }</span>
+                                                                                            </Link>
+                                                                                        </div>
+                                                                                        {/*<div class="w-0 bg-ms_dark_blue group-hover:w-full h-[1px] transition-all duration-300 ease-in"></div>*/}
+                                                                                    </div>
+                                                                                    )
+
+                                                                            })
+
+                                                                        }
+                                                                    </div>
+                                                                </div>
+                                                                <div>
+                                                                    <div className="font-proxima_nova font-bold text-xl text-ms_dark_blue mb-2 capitalize">{ item.data.title_two }</div>
+                                                                        <div className="flex flex-col">
+                                                                            {
+
+                                                                                item.data.creative_services.map( ( sub_item, sub_item_index ) => {
+
+                                                                                    return(
+                                                                                        <div className="group w-fit" key={ sub_item_index }>
+                                                                                            <div className="py-2">
+                                                                                                <Link
+                                                                                                    aria-label={ "explore" + sub_item.title }
+                                                                                                    href={ "/" + item.data.slug + "/" + sub_item.slug }
+                                                                                                >
+                                                                                                    <span className="font-proxima_nova font-light text-ms_dark_blue text-lg capitalize">{ sub_item.title }</span>
+                                                                                                </Link>
+                                                                                            </div>
+                                                                                        {/*<div class="w-0 bg-ms_dark_blue group-hover:w-full h-[1px] transition-all duration-300 ease-in"></div>*/}
+                                                                                        </div>
+                                                                                    )
+
+                                                                                })
+
+                                                                            }
                                                                         </div>
-                                                                        )
+                                                                    </div>
+                                                                </div>
 
-                                                                })
+                                                        }
+                                                        {
 
-                                                            }
+                                                            item.data.title !== "Services" &&
+                                                            <div className="hidden group-hover:block group-hover:flex-col absolute p-10 rounded bg-white -left-10 z-20 top-12 w-60 gap-2">
+                                                                <div className="flex flex-col">
+                                                                    {
+
+                                                                        item.data.items.map( ( sub_item, sub_item_index ) => {
+
+                                                                            return(
+                                                                                <div className="group w-fit" key={ sub_item_index }>
+                                                                                    <div className="py-2">
+                                                                                        <Link
+                                                                                            aria-label={ "explore" + sub_item.title }
+                                                                                            href={ "/" + item.data.slug + "/" + sub_item.slug }
+                                                                                        >
+                                                                                            <span className="font-proxima_nova font-light text-ms_dark_blue text-lg capitalize">{ sub_item.title }</span>
+                                                                                        </Link>
+                                                                                    </div>
+                                                                                    {/*<div class="w-0 bg-ms_dark_blue group-hover:w-full h-[1px] transition-all duration-300 ease-in"></div>*/}
+                                                                                </div>
+                                                                                )
+
+                                                                        })
+
+                                                                    }
+                                                                </div>
                                                             </div>
-                                                        </div>
+
+                                                        }
                                                     </div>
 
                                                 }
