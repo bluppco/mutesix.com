@@ -33,10 +33,10 @@ const Header = ( props ) => {
                             <ul className="flex gap-8">
                                 {
 
-                                    header_data.map( ( item ) => {
+                                    header_data.map( ( item, index ) => {
 
                                         return (
-                                            <li className="text-sm font-proxima_nova font-extrabold tracking-widest uppercase flex items-center gap-2 relative group cursor-pointer py-4">
+                                            <li className="text-sm font-proxima_nova font-extrabold tracking-widest uppercase flex items-center gap-2 relative group cursor-pointer py-4" key={ index }>
                                                 <Link
                                                     aria-label={"explore " + item.data.title }
                                                     href={ "/" + item.data.slug }
