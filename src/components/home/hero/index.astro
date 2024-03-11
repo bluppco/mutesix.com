@@ -1,0 +1,20 @@
+---
+
+// IMPORTS ASTRO ATOMS
+import Video from "@/atoms/video/index.astro"
+
+// GET ASTRO PROPS
+const {
+
+    CDN,
+    data,
+    PROJECT
+
+} = Astro.props
+
+---
+<section class="mt-28 bg-zinc-200">
+    <Video>
+        <source src={ CDN + PROJECT + "/" + data.videos[0].file } type="video/mp4" />
+    </Video>
+</section>

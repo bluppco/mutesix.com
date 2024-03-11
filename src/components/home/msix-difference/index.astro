@@ -1,0 +1,50 @@
+---
+
+// IMPORTS ASTRO LAYOUTS
+import Container from "@/layouts/container/index.astro"
+
+// IMPORTS ASTRO ATOMS
+import HeadingTwoBlue from "@/atoms/headings/two/blue/index.astro"
+import Picture from "@/atoms/picture/index.astro"
+
+// GET ASTRO PROPS
+const {
+
+    CDN,
+    data,
+    PROJECT
+
+} = Astro.props
+
+---
+<Container>
+    <section class="space-y-4 md:space-y-12 pb-10 md:pb-36">
+        <section class="grid md:grid-cols-2 gap-12 md:gap-2">
+            <section class="flex flex-col justify-center order-last md:order-none space-y-6">
+                <HeadingTwoBlue>{ data.title }</HeadingTwoBlue>
+                <p class="text-3xl md:text-6xl font-proxima_nova font-medium text-ms_dark_blue leading-tight">{ data.sub_title }</p>
+            </section>
+            <div class="w-full h-full rounded-3xl overflow-hidden">
+                <Picture
+                    alternative_text={ data.title }
+                    CDN={ CDN }
+                    PROJECT={ PROJECT }
+                    source={ data.cover }
+                    image_width="900"
+                />
+            </div>
+        </section>
+        <div class="md:px-20">
+            <p class="text-2xl md:text-3xl md:text-center font-proxima_nova font-medium text-ms_dark_blue md:leading-normal">{ data.description }</p>
+        </div>
+        <div class="w-full h-full">
+            <Picture
+                alternative_text={ data.title }
+                CDN={ CDN }
+                PROJECT={ PROJECT }
+                source={ data.images[0].file }
+                image_width="2000"
+            />
+        </div>
+    </section>
+</Container>

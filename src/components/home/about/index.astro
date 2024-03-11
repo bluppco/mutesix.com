@@ -1,0 +1,44 @@
+---
+
+// IMPORTS ASTRO LAYOUTS
+import Container from "@/layouts/container/index.astro"
+
+// IMPORTS ASTRO ATOMS
+import HeadingOneBlue from "@/atoms/headings/one/blue/center/index.astro"
+import PictureContain from "@/atoms/picture/contain/index.astro"
+import Paragraph3xl from "@/atoms/paragraph/3xl/index.astro"
+
+// GET ASTRO PROPS
+const {
+
+    CDN,
+    data,
+    PROJECT
+
+} = Astro.props
+
+---
+<section class="py-10 md:py-24">
+    <Container>
+        <section class="space-y-4 md:space-y-16">
+            <section class="space-y-8">
+                <HeadingOneBlue>{ data.title }</HeadingOneBlue>
+                <p class="text-4xl md:text-6xl text-center font-proxima_nova font-bold leading-snug md:leading-none">{ data.sub_title }</p>
+            </section>
+            <section class="grid md:grid-cols-2 gap-4 md:gap-10">
+                <div class="h-96 md:h-[680px] w-full">
+                    <PictureContain
+                        alternative_text="about"
+                        CDN={ CDN }
+                        image_width="1000"
+                        PROJECT={ PROJECT }
+                        source={ data.cover }
+                    />
+                </div>
+                <div class="flex items-center">
+                    <Paragraph3xl>{ data.description }</Paragraph3xl>
+                </div>
+            </section>
+        </section>
+    </Container>
+</section>

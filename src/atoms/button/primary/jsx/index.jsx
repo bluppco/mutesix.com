@@ -1,0 +1,11 @@
+const PrimaryButton = ( props ) => {
+
+    return(
+        <button className="h-10 px-8 rounded-full text-sm tracking-widest flex items-center bg-ms_royal_blue hover:bg-ms_black border border-ms_royal_blue hover:border-ms_black font-proxima_nova font-bold uppercase text-white transition-all duration-200">
+            { props.children }
+        </button>
+    )
+
+}
+
+export default PrimaryButton

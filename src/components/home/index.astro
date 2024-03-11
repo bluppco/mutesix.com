@@ -1,0 +1,64 @@
+---
+
+// IMPORTS ASTRO COMPONENTS
+import About from "@/components/home/about/index.astro"
+import Clients from "@/components/home/clients/index.astro"
+import Footer from "@/components/common/footer/index.astro"
+import Header from "@/components/common/header/index.astro"
+import HeaderBanner from "@/components/common/header-banner/index.astro"
+import Hero from "@/components/home/hero/index.astro"
+import Insights from "@/components/home/insights/index.astro"
+import Services from "@/components/home/services/index.astro"
+import TheM6Difference from "@/components/home/msix-difference/index.astro"
+import Work from "@/components/home/work/index.astro"
+
+// GET ASTRO PROPS
+const {
+
+    CDN,
+    ENVIRONMENT,
+    home_data,
+    PROJECT,
+	services,
+	work
+
+} = Astro.props
+
+---
+<HeaderBanner
+    ENVIRONMENT={ ENVIRONMENT }
+/>
+<Header />
+<Hero
+    CDN={ CDN }
+    data={ home_data.hero }
+    PROJECT={ PROJECT }
+/>
+<About
+    CDN={ CDN }
+    data={ home_data.about }
+    PROJECT={ PROJECT }
+/>
+<Insights
+    data={ home_data.insights }
+/>
+<Work
+    CDN={ CDN }
+    data={ home_data.work }
+    PROJECT={ PROJECT }
+    work={ work }
+/>
+<Clients
+    CDN={ CDN }
+    data={ home_data.clients }
+    PROJECT={ PROJECT }
+/>
+<TheM6Difference
+    CDN={ CDN }
+    data={ home_data.difference }
+    PROJECT={ PROJECT }
+/>
+<Services
+    data={ services }
+/>
+<Footer />

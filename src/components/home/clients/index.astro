@@ -1,0 +1,39 @@
+---
+
+// IMPORTS ASTRO LAYOUTS
+import Container from "@/layouts/container/index.astro"
+
+// IMPORTS ASTRO ATOMS
+import Link from "@/atoms/link/index.astro"
+import PictureContain from "@/atoms/picture/contain/index.astro"
+import PrimaryButton from "@/atoms/button/primary/index.astro"
+
+// GET ASTRO PROPS
+const {
+
+    CDN,
+    data,
+    PROJECT
+
+} = Astro.props
+
+---
+<Container>
+    <section class="space-y-10 md:pt-20 pb-10 md:pb-20">
+        <h2 class="font-proxima_nova font-medium text-ms_dark_blue text-4xl md:text-5xl text-center tracking-wider">{ data.title }</h2>
+        <div class="w-full aspect-[3/1]">
+            <PictureContain
+                alternative_text={ data.title }
+                CDN={ CDN }
+                image_width="1600"
+                PROJECT={ PROJECT }
+                source={ data.cover }
+            />
+        </div>
+        <div class="flex justify-center">
+            <Link href={ data.button_link } aria_label={ data.button_text }>
+                <PrimaryButton>{ data.button_text }</PrimaryButton>
+            </Link>
+        </div>
+    </section>
+</Container>

@@ -1,0 +1,20 @@
+---
+
+// IMPORTS ASTRO LAYOUTS
+import Container from "@/layouts/container/index.astro"
+
+// IMPORTS JSX COMPONENTS
+import ServiceAccordion from "@/components/home/services/accordion/index.jsx"
+
+// GET ASTRO PROPS
+const { data } = Astro.props
+
+---
+<section class="bg-ms_royal_blue py-4 md:py-24">
+    <Container>
+        <ServiceAccordion
+            client:load
+            data={ data }
+        />
+    </Container>
+</section>

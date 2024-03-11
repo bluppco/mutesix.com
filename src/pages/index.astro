@@ -1,16 +1,48 @@
 ---
 
----
+// RUNTIME
+const runtime = Astro.locals.runtime
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
-</html>
+const {
+
+    CDN,
+    ENDPOINT,
+    ENVIRONMENT,
+    PROJECT
+
+} = runtime.env
+const data = await homeAPI( ENVIRONMENT, ENDPOINT )
+
+// API
+import { homeAPI } from "@/api/home/index.js"
+
+const {
+
+	home_data,
+	meta,
+	services,
+	work
+
+} = data
+
+// IMPORTS LAYOUTS
+import Layout from "@/layouts/layout/index.astro"
+
+// HOME COMPONENTS
+import Home from "@/components/home/index.astro"
+
+---
+<Layout
+	description={ meta.description }
+	image={ meta.cover }
+	title={ meta.title }
+>
+	<Home
+		CDN={ CDN }
+		ENVIRONMENT={ ENVIRONMENT }
+		home_data={ home_data }
+		PROJECT={ PROJECT }
+		services={ services }
+		work={ work }
+	/>
+</Layout>
